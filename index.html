@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+    <h1>Кольорові блоки</h1>
+   
+    <header>  
+        <div class="block red" onclick="changeColor(this)"></div>
+        <div class="block green" onclick="changeColor(this)"></div>
+        <div class="block blue" onclick="changeColor(this)"></div> 
+    </header>
+       
+    <div class="main">
+        <div class="block">
+            <div class="main-block-top red" onclick="changeColor(this)"></div>
+            <div class="main-block-top green" onclick="changeColor(this)"></div>
+            <div class="main-block-top blue" onclick="changeColor(this)"></div>
+        </div>
+        <div class="block yellow" onclick="changeColor(this)"></div>
+        <div class="block blue">
+            <div class="main-block-bottom grey" onclick="changeColor(this)"></div>
+            <div class="main-block-bottom black" onclick="changeColor(this)"></div>
+        </div>
+    </div>
+
+     <footer>
+        <div class="footer-block ck red" onclick="changeColor(this)">
+            <p>Text 1</p>
+        </div>
+        <div class="footer-block green" onclick="changeColor(this)">
+            <p>Text 2</p>
+        </div>
+        <div class="footer-block blue" onclick="changeColor(this)">
+            <p>Text 3</p>
+        </div> 
+    </footer>
+
+    <script>
+        function changeColor(element) {
+            var colors = ["red", "green", "blue", "yellow", "grey", "black"];
+            var currentColor = element.className.split(" ")[1];
+            var currentIndex = colors.indexOf(currentColor);
+            var newIndex = (currentIndex + 1) % colors.length;
+            element.className = "block " + colors[newIndex];
+        }
+    </script>
+</body>
+</html>
